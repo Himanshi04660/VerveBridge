@@ -20,14 +20,11 @@ for i in range(1,int(page_num)+1):
     # Fetch the content of the url using BeautifulSoup
     content=BeautifulSoup(req.content, 'html.parser')
 
-
-
     # Scrap product name data
     name=content.find_all('div', {"class":"KzDlHZ"})
 
     for i in name:
         phn_nm.append(i.text)
-
 
     
     # Scrap product price data
@@ -35,28 +32,25 @@ for i in range(1,int(page_num)+1):
 
     for i in price:
         phn_pr.append(i.text)
+      
 
-
-  
     # Scrap product description data
     description=content.find_all('ul', {"class":"G4BRas"})
 
     for i in description:
         phn_desc.append(i.text)
-
-
-   
+    
     # Prints no. of phones on each page
     print("Phones in page"+str(i))
     print(len(name)) 
-
-# Creating dataframe
-data={"Product name":phn_nm, "Product price": phn_pr, "Product Description":phn_desc}
+  
+# Creates Dataframe from the data
+data={"Product name":phn_nm, "Product price": phn_pr, "Product Description":phn_desc }
 df=pd.DataFrame(data)
 print(df)
 
 # Export to CSV file
-csv_file = 'Laptops.csv'
+csv_file = 'Product_details.csv'
 df.to_csv(csv_file, index=False)
     
 print(f"Scraping and exporting completed. Data saved to {csv_file}.")

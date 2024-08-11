@@ -56,3 +56,31 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def get_user_question():
+  """Gets finance-related question from the user."""
+  question = input("Ask your personal finance question: ")
+  return question
+
+def provide_ai_assistance(question):
+  """Provides AI assistance based on the user's question."""
+  # In a real-world scenario, you would integrate with a language model API here.
+  # For this example, we'll use a simple rule-based approach.
+  if "budget" in question.lower():
+    response = "Creating a budget is a great first step! Try listing your income and expenses, then identify areas where you can cut back."
+  elif "invest" in question.lower():
+    response = "Investing can help grow your wealth over time. Consider low-cost index funds or ETFs for a diversified portfolio."
+  elif "debt" in question.lower():
+    response = "Managing debt is crucial. Prioritize paying down high-interest debt first, and consider strategies like the snowball or avalanche method."
+  else:
+    response = "I'm still learning about personal finance. Can you rephrase your question or ask something more specific?"
+  return response
+
+def main():
+  """Main function to interact with the user."""
+  question = get_user_question()
+  assistance = provide_ai_assistance(question)
+  print(assistance)
+
+if __name__ == "__main__":
+  main()

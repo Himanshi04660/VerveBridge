@@ -25,7 +25,7 @@ To use the Personal Finance Manager:
 ==> Input Your Financial Data:
 	-> Enter your total monthly income.
 	-> Specify the number of expense categories.
-	->For each category, input the category name and monthly expense.
+	-> For each category, input the category name and monthly expense.
 
 ==> View the Analysis:
     After entering all the details, you will receive:
@@ -36,4 +36,4 @@ To use the Personal Finance Manager:
 	-> A pie chart representing the distribution of your expenses
 
 ==> Ask AI-Assisted Questions:
-    You can interact with the AI to ask questions related to your financial situation, such as "How can I save more?" or "What is the best investment strategy for me?"
+    You can interact with the AI to ask questions related to your financial situation.
